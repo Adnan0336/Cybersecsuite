@@ -2,8 +2,6 @@
 --
 
 ## ⚙️ **requirements.txt**
-
-text
 Flask==3.0.3
 requests==2.32.3
 scikit-learn==1.5.2
