@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PhishNet - URL Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>🧩 PhishNet – Phishing URL Detector</h2>
+        <form method="POST">
+            <input type="text" name="url" placeholder="Enter URL to check" required>
+            <button type="submit">Scan URL</button>
+        </form>
+        {% if result %}
+        <div class="result">{{ result }}</div>
+        {% endif %}
+        <a href="/">⬅ Back</a>
+    </div>
+</body>
+</html>

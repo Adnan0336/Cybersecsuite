@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ThreatBoard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>📊 ThreatBoard – Security Dashboard</h2>
+        <canvas id="chart"></canvas>
+        <script>
+        const ctx = document.getElementById('chart');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Login Failures', 'Phishing Alerts', 'Breaches'],
+                datasets: [{
+                    label: 'Incidents',
+                    data: [5, 2, 1],
+                }]
+            }
+        });
+        </script>
+
+        <table>
+            <tr><th>ID</th><th>Event</th><th>Severity</th></tr>
+            {% for row in data %}
+            <tr><td>{{ row[0] }}</td><td>{{ row[1] }}</td><td>{{ row[2] }}</td></tr>
+            {% endfor %}
+        </table>
+        <a href="/">⬅ Back</a>
+    </div>
+</body>
+</html>
